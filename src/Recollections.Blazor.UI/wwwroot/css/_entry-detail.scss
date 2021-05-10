@@ -92,6 +92,31 @@
     .placeholder {
         color: $placeholder-color;
     }
+
+    @media(max-width: 575px) {
+        .gps-opened {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 48px;
+            bottom: 0;
+            background: white;
+
+            .map-container {
+                height: 100%;
+
+                .map {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 575px) {
+    .gps-opened-body {
+        overflow: hidden;
+    }
 }
 
 .pswp__title {

@@ -1,6 +1,8 @@
-﻿<InlineLink IconPrefix="fas" Icon="location-arrow" Value="@Value" PlaceHolder="@PlaceHolder" OnClick="@OnToggle" IsClickable="@IsEnabled" />
+﻿<div class="gps @(IsVisible ? "gps-opened" : String.Empty)">
+    <InlineLink IconPrefix="fas" Icon="location-arrow" Value="@Value" PlaceHolder="@PlaceHolder" OnClick="@OnToggleAsync" IsClickable="@IsEnabled" />
 
-@if (IsVisible)
-{
-    @ChildContent
-}
+    @if (IsVisible)
+    {
+        @ChildContent
+    }
+</div>

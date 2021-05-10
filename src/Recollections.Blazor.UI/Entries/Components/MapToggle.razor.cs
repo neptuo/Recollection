@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +11,9 @@ namespace Neptuo.Recollections.Entries.Components
 {
     public partial class MapToggle
     {
+        [Inject]
+        protected IJSRuntime Js { get; set; }
+
         [Parameter]
         public string Text { get; set; }
 
@@ -35,10 +39,12 @@ namespace Neptuo.Recollections.Entries.Components
             UpdateText();
         }
 
-        protected void OnToggle()
+        protected async Task OnToggleAsync()
         {
             IsVisible = !IsVisible;
             UpdateText();
+
+            await Js.InvokeVoidAsync("MapToggle.SetVisible", IsVisible);
         }
 
         private void UpdateText()

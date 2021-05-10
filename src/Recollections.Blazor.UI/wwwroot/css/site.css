@@ -556,6 +556,22 @@ h4 .inline-editor-viewmode .oi {
         position: absolute; }
   .entry-detail .placeholder {
     color: #aaaaaa; }
+  @media (max-width: 575px) {
+    .entry-detail .gps-opened {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 48px;
+      bottom: 0;
+      background: white; }
+      .entry-detail .gps-opened .map-container {
+        height: 100%; }
+        .entry-detail .gps-opened .map-container .map {
+          height: 100%; } }
+
+@media (max-width: 575px) {
+  .gps-opened-body {
+    overflow: hidden; } }
 
 .pswp__title {
   position: absolute;

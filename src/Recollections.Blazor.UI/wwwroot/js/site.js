@@ -400,3 +400,13 @@ window.Downloader = {
         document.body.removeChild(link);
     }
 };
+
+window.MapToggle = {
+    SetVisible: function (isVisible) {
+        if (isVisible) {
+            $(document.body).addClass("gps-opened-body");
+        } else {
+            $(document.body).removeClass("gps-opened-body");
+        }
+    }
+}
